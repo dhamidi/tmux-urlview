@@ -2,19 +2,21 @@
 
 A simple tool that extracts URLs from your tmux pane content and lets you select and open them using fzf. Perfect for quickly opening links from terminal output, logs, or any text in your tmux session.
 
+## Installation
+
+Install directly with Go:
+```bash
+go install github.com/dhamidi/tmux-urlview@latest
+```
+
 ## Quick Start
 
 ### Try it out
 
-First, build the tool:
-```bash
-go build -o tmux-urlview tmux-urlview.go
-```
-
 To test the functionality, you can try the tmux binding temporarily:
 ```bash
 # Apply the binding temporarily to your current tmux session
-tmux $(./tmux-urlview init)
+tmux $(tmux-urlview init)
 ```
 
 Now press `Prefix + U` in any tmux pane to extract and select URLs!
@@ -25,13 +27,13 @@ To enable the URL viewer permanently, add the binding to your tmux configuration
 
 ```bash
 # Add the binding to your tmux.conf
-./tmux-urlview init >> ~/.tmux.conf
+tmux-urlview init >> ~/.tmux.conf
 
 # Reload your tmux configuration
 tmux source-file ~/.tmux.conf
 ```
 
-Or manually add the output of `./tmux-urlview init` to your `~/.tmux.conf`.
+Or manually add the output of `tmux-urlview init` to your `~/.tmux.conf`.
 
 ## How it works
 
