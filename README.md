@@ -62,3 +62,7 @@ echo "Check out https://example.com" | tmux-urlview
 # Get tmux binding configuration
 tmux-urlview init
 ```
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.
