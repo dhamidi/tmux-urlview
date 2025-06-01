@@ -13,11 +13,8 @@ go build -o tmux-urlview tmux-urlview.go
 
 To test the functionality, you can try the tmux binding temporarily:
 ```bash
-# Get the binding command
-./tmux-urlview init
-
-# Apply it temporarily to your current tmux session
-tmux bind U display-popup -E 'tmux capture-pane -p | ./tmux-urlview'
+# Apply the binding temporarily to your current tmux session
+tmux $(./tmux-urlview init)
 ```
 
 Now press `Prefix + U` in any tmux pane to extract and select URLs!
@@ -34,10 +31,7 @@ To enable the URL viewer permanently, add the binding to your tmux configuration
 tmux source-file ~/.tmux.conf
 ```
 
-Or manually add this line to your `~/.tmux.conf`:
-```
-bind U display-popup -E 'tmux capture-pane -p | tmux-urlview'
-```
+Or manually add the output of `./tmux-urlview init` to your `~/.tmux.conf`.
 
 ## How it works
 
