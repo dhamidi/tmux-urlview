@@ -63,6 +63,10 @@ echo "Check out https://example.com" | tmux-urlview
 tmux-urlview init
 ```
 
+## Built with Amp
+
+This entire project was "vibe coded" with [Amp](https://ampcode.com)—from initial concept to tests to documentation. Without AI pair programming, this would have been yet another "great idea" that never shipped. Sometimes the difference between software existing and not existing is having the right tools to go from idea to done in one session.
+
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
