@@ -1,6 +1,6 @@
 # tmux-urlview
 
-A simple tool that extracts URLs from your tmux pane content and lets you select and open them using fzf. Perfect for quickly opening links from terminal output, logs, or any text in your tmux session.
+**Zero-config URL extraction for tmux.** See a link in your terminal? Press a key, pick it, open it. No configuration files, no complex setup, no ongoing maintenance. This is "done" software—install once, use forever, never think about it again.
 
 ![tmux-urlview in action](screenshot.png)
 
