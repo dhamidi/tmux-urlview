@@ -109,6 +109,56 @@ func TestExtractURLs(t *testing.T) {
 			input:    "Valid: https://example.com Invalid: https://",
 			expected: []string{"https://example.com"},
 		},
+		{
+			name:     "URL with query parameters",
+			input:    "Search: https://example.com/search?q=test&sort=date",
+			expected: []string{"https://example.com/search?q=test&sort=date"},
+		},
+		{
+			name:     "URL with query parameters followed by punctuation",
+			input:    "Check https://example.com/api?key=123&value=test. Also visit https://test.org!",
+			expected: []string{"https://example.com/api?key=123&value=test", "https://test.org"},
+		},
+		{
+			name:     "URL ending with period in sentence",
+			input:    "Visit https://example.com.",
+			expected: []string{"https://example.com"},
+		},
+		{
+			name:     "URL ending with comma in list",
+			input:    "Sites: https://example.com, https://test.org, and more",
+			expected: []string{"https://example.com", "https://test.org"},
+		},
+		{
+			name:     "URL ending with semicolon",
+			input:    "Reference: https://example.com; see also other sources",
+			expected: []string{"https://example.com"},
+		},
+		{
+			name:     "URL ending with exclamation mark",
+			input:    "Amazing site: https://example.com!",
+			expected: []string{"https://example.com"},
+		},
+		{
+			name:     "URL ending with question mark",
+			input:    "Have you seen https://example.com?",
+			expected: []string{"https://example.com"},
+		},
+		{
+			name:     "URL with multiple trailing punctuation",
+			input:    "Check this out: https://example.com...",
+			expected: []string{"https://example.com"},
+		},
+		{
+			name:     "URL with fragment and trailing punctuation",
+			input:    "See https://example.com/page#section.",
+			expected: []string{"https://example.com/page#section"},
+		},
+		{
+			name:     "URL in parentheses",
+			input:    "Reference (https://example.com) for details",
+			expected: []string{"https://example.com"},
+		},
 	}
 
 	for _, tt := range tests {

@@ -143,7 +143,7 @@ func extractURLs(text string) []string {
 	seen := make(map[string]bool)
 	
 	for _, match := range matches {
-		cleaned := strings.TrimRight(match, ".,;!?")
+		cleaned := strings.TrimRight(match, ".,;!?)(]}")
 		
 		if _, err := url.Parse(cleaned); err == nil {
 			if !seen[cleaned] {
